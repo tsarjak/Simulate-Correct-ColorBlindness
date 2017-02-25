@@ -24,3 +24,5 @@ python transform.py --help #For Help from terminal
 #-st to Simulate Tritanopia
 #-correct to correct the image for protanopia patients
 ```
+
+_Currently Corrects only Protanopia Color Blindness via transformation. Deutranopia and Tritanopia to be added soon!_
