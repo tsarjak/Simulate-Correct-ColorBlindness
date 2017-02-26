@@ -31,8 +31,8 @@ python transform.py --help #For Help from terminal
 
 Original Image : ![plate15](https://cloud.githubusercontent.com/assets/9898343/23335798/0750036a-fbe3-11e6-9295-15ea03c8429c.jpg) 
 
-Simulated Image (How protanopes will percieve the image!) : 
-![plate15sim](https://cloud.githubusercontent.com/assets/9898343/23335813/5509b8b2-fbe3-11e6-8fd5-fc93016e7542.jpg)
+Simulated Image: 
+![plate15sim](https://cloud.githubusercontent.com/assets/9898343/23335813/5509b8b2-fbe3-11e6-8fd5-fc93016e7542.jpg) (How protanopes will percieve the image!) :
 
 #### Correcting Protanopia
 
