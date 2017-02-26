@@ -8,7 +8,7 @@ sudo pip install Pillow colorsys numpy
 ```
 ### To Install
 ```shell
-git clone https://github.com/tsarjak/WallpapersFromReddit.git
+git clone https://github.com/tsarjak/Simulate-Correct-ColorBlindness.git
 ```
 ### To run the code
 In terminal:
