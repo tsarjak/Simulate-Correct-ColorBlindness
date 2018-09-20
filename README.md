@@ -4,7 +4,7 @@ This Script converts images to simulate Colour blindness using Daltonization Alg
 ### Libraries Required:
 PIL, colorsys, numpy
 ```shell
-sudo pip install Pillow colorsys numpy
+sudo pip install Pillow numpy
 ```
 ### To Install
 ```shell
