@@ -45,6 +45,14 @@ def main():
                  protanopia_degree=0.0,
                  deutranopia_degree=1.0)
 
+    # Correcting Image for Hybrid with diagnosed degree of 1.0 for both protanopia and
+    # deutranopia and saving the image to file.
+    Core.correct(input_path='Examples_Check/example_original.jpg',
+                 return_type='save',
+                 save_path='Examples_Check/example_corrected_hybrid.png',
+                 protanopia_degree=1.0,
+                 deutranopia_degree=1.0)
+
     # You can also use different return types and get numpy array or PIL.Image for further processing.
     # See recolor.py
     return

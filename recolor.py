@@ -106,17 +106,17 @@ def parse_args():
         '-input', type=str, help='Path to input image.')
     parser.add_argument(
         '-output', type=str, help='Path to save the output image dir.')
-    parser.add_argument('-sim_protanopia', action='store_true',
+    parser.add_argument('-sim_protanopia', action='store_true', default=False,
                         help='Simulate Protanopia (Common Red-Green  Blindness)')
-    parser.add_argument('-sim_deutranopia', action='store_true',
+    parser.add_argument('-sim_deutranopia', action='store_true', default=False,
                         help='Simulate Deutranopia (Rare Red-Green Blindness)')
-    parser.add_argument('-sim_tritanopia', action='store_true',
+    parser.add_argument('-sim_tritanopia', action='store_true', default=False,
                         help='Simulate Tritanopia (Blue-Yellow Color Blindness)')
-    parser.add_argument('-sim_hybrid', action='store_true',
+    parser.add_argument('-sim_hybrid', action='store_true', default=False,
                         help='Simulate a Hybrid Colorblindness (Protanopia + Deutranopia)')
-    parser.add_argument('-correct_colors', action='store_true',
+    parser.add_argument('-correct_colors', action='store_true', default=False,
                         help='Correct Image for Protanopia')
-    parser.add_argument('-all', action='store_true',
+    parser.add_argument('-run_all', action='store_true', default=False,
                         help='Perform all simulations and corrections.')
     parser.add_argument('-protanopia_degree', type=float, default=1.0,
                         help='Adjust the degree of Protanopia. Default is 1.0')
@@ -142,7 +142,7 @@ def main():
 
     # Setup the run_all flag.
     run_all = False
-    if args.all:
+    if args.run_all:
         run_all = True
 
     if args.sim_protanopia or run_all:
