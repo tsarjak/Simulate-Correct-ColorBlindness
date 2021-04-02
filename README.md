@@ -70,7 +70,8 @@ Check the directory and see if you have 5 processed + 1 original image. The proc
 cd ~/Simulate-Correct-ColorBlindness
 
 # Run the script with flags.
-# Let's say we want to simulate only tritanopia, and correct the image for protanopia and deutranopia. We run the below command.
+# Let's say we want to simulate only tritanopia, and correct the image 
+# for protanopia and deutranopia. We run the below command.
 python recolor.py
   -input /Users/example_user/pictures/sample.jpg
   -output /Users/example_user/pictures/sample_dir/
@@ -80,13 +81,16 @@ python recolor.py
   -sim_tritanopia
   -correct_colors
   
- # If you want to run all the operations, you can also use the -all flag. We will keep the degrees as default (1.0) this time to focus on -run_all flag.
+ # If you want to run all the operations, you can also use the -all flag. 
+ # We will keep the degrees as default (1.0) this time to focus on -run_all flag.
  python recolor.py
   -input /Users/example_user/pictures/sample.jpg
   -output /Users/example_user/pictures/sample_dir/
   -run_all
   
- # If you want to run correction for only protanopia, you can set the deutranopia_degree value to 0. Essentially forcing the algorithm to not assume deutranopia.
+ # If you want to run correction for only protanopia, 
+ # you can set the deutranopia_degree value to 0. 
+ # Essentially forcing the algorithm to not assume deutranopia.
  python recolor.py
    -input /Users/example_user/pictures/sample.jpg
    -output /Users/example_user/pictures/sample_dir/
