@@ -42,23 +42,73 @@ python run_examples.py
 ```
 
 This will run all the available algorithms on the example image, and save the processed images in the *Examples_Check/* directory.
-Check the directory and see if you have 5 processed + 1 original image.
+Check the directory and see if you have 5 processed + 1 original image. The processed (verified) and the original image are tagged in this readme file. If you want to verify further, have a look at the images in your computer and the images here.
 
 
-### Examples
+## Running the script
 
-#### Simulating Protanopia
+*Control flags and description (For command line/terminal usage)*
 
-Original Image : ![plate15](https://cloud.githubusercontent.com/assets/9898343/23335798/0750036a-fbe3-11e6-9295-15ea03c8429c.jpg) 
+| Flag &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Args type &nbsp; &nbsp; &nbsp; &nbsp;| Description | Default  | Needed? |
+| --------|:---------:|:-------:|:---:|---:|
+| -input       | *string* | Path to the input image to simulate/correct. | *None* | Yes |
+| -output      | *string* | Directory where all simulated/corrected images will be stored.| *None* | Yes |
+| -protanopia_degree | *float: [0,1]* | Degree of protanopia to simulate/correct. | *1.0* | No |
+| -deutranopia_degree | *float: [0,1]* | Degree of deutranopia to simulate/correct. | *1.0* | No |
+| -tritanopia_degree | *float: [0,1]* | Degree of tritanopia to simulate/correct. | *1.0* | No |
+| -sim_protanopia |  *None*  |    Use this flag to simulate Protanopia. | *False* | No |
+| -sim_deutranopia |  *None*  |    Use this flag to simulate deutranopia. | *False* | No |
+| -sim_tritanopia |  *None*  |    Use this flag to simulate tritanopia. | *False* | No |
+| -sim_hybrid |  *None*  |    Use this flag to simulate hybrid colorblindness. | *False* | No |
+| -correct_colors |  *None*  |    Use this flag to correct colors for protanopia and deutranopia. | *False* | No |
+| -run_all |  *None*  |    Use this flag to perform all operations (simulate + correct). | *False* | No |
+  
 
-Simulated Image: 
-![plate15sim](https://cloud.githubusercontent.com/assets/9898343/23335813/5509b8b2-fbe3-11e6-8fd5-fc93016e7542.jpg) (How protanopes will percieve the image!) :
+*How to run the script*
+```shell
+# Go to the directory
+cd ~/Simulate-Correct-ColorBlindness
 
-#### Correcting Protanopia
+# Run the script with flags.
+# Let's say we want to simulate only tritanopia, and correct the image for protanopia and deutranopia. We run the below command.
+python recolor.py
+  -input /Users/example_user/pictures/sample.jpg
+  -output /Users/example_user/pictures/sample_dir/
+  -protanopia_degree 0.9
+  -deutranopia_degree 0.6
+  -tritanopia_degree 0.5 
+  -sim_tritanopia
+  -correct_colors
+  
+ # If you want to run all the operations, you can also use the -all flag. We will keep the degrees as default (1.0) this time to focus on -run_all flag.
+ python recolor.py
+  -input /Users/example_user/pictures/sample.jpg
+  -output /Users/example_user/pictures/sample_dir/
+  -run_all
+  
+ # If you want to run correction for only protanopia, you can set the deutranopia_degree value to 0. Essentially forcing the algorithm to not assume deutranopia.
+ python recolor.py
+   -input /Users/example_user/pictures/sample.jpg
+   -output /Users/example_user/pictures/sample_dir/
+   -deutranopia_degree 0
+   -correct_colors
+```
 
-Original Image and How Protanopes will Perceive it : ![before_1](https://cloud.githubusercontent.com/assets/9898343/23335851/f23b4682-fbe3-11e6-9fea-2f313c6c6dd3.png)
 
-Correcting the above original image and then Simulating it for Protanopes. The number which were unreadable for protanopes have now become clear enough to be recognised! : ![comb26022017053044](https://cloud.githubusercontent.com/assets/9898343/23335899/db0687f0-fbe4-11e6-9d92-f60bf15a5ff1.jpg)
+## Example Image results: (TODO)
 
+### Original Image:
 
-_Currently Corrects only Protanopia Color Blindness via transformation. Deutranopia and Tritanopia to be added soon!_
+### Simulating Protanopia, Degree = 1.0:
+
+### Simulating Deutranopia, Degree = 1.0:
+
+### Simulating Tritanopia, Degree = 1.0:
+
+### Simulating Hybrid ColorBlindness, Protanopia_degree = Deutranopia_degree = 1.0
+
+### Correcting for Protanopia, Protanopia_degree = 1.0, Deutranopia_degree = 0.0
+
+### Correcting for Deutranopia, Protanopia_degree = 0.0, Deutranopia_degree = 1.0
+
+### Correcting for Hybrid, Protanopia_degree = 1.0, Deutranopia_degree = 1.0
