@@ -64,7 +64,7 @@ Check the directory and see if you have 5 processed + 1 original image. The proc
 | -run_all |  *None*  |    Use this flag to perform all operations (simulate + correct). | *False* | No |
   
 
-*How to run the script*
+### *How to run the script*
 
 Go to the directory
 ```shell
